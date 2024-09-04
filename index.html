@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dieter Rams Style Grid</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <div class="grid-container">
-        <div class="box" onclick="playAudio('1')">1</div>
-        <div class="box" onclick="playAudio('2')">2</div>
-        <div class="box" onclick="playAudio('3')">3</div>
-        <div class="box" onclick="playAudio('4')">4</div>
-        <div class="box" onclick="playAudio('5')">5</div>
-        <div class="box" onclick="playAudio('6')">6</div>
-        <div class="box" onclick="playAudio('7')">7</div>
-        <div class="box" onclick="playAudio('8')">8</div>
-        <div class="box" onclick="playAudio('9')">9</div>
-        <div class="box" onclick="playAudio('10')">10</div>
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Audio Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cal-body">
+      <div class="input">
+        <img src="audio/sound1.gif" alt="sound wave" />
+        <img src="audio/sound2.gif" alt="sound wave" />
+      </div>
+      <div style="padding-top: 40px">
+        <div class="buttons">
+          <button class="square" data-audio="1">1</button>
+          <button class="square" data-audio="2">2</button>
+          <button class="square" data-audio="3">3</button>
+          <button class="square" data-audio="4">4</button>
+        </div>
+        <div class="buttons">
+          <button class="square" data-audio="5">5</button>
+          <button class="square" data-audio="6">6</button>
+          <button class="square" data-audio="7">7</button>
+          <button class="square" data-audio="8">8</button>
+        </div>
+        <div class="buttons">
+          <button class="square" data-audio="9">9</button>
+          <button class="square" data-audio="10">10</button>
+          <button class="square" data-audio="11">11</button>
+          <button class="square" data-audio="12">12</button>
+        </div>
+        <div class="buttons">
+          <button class="square" data-audio="13">13</button>
+          <button class="square" data-audio="14">14</button>
+          <button class="square" data-audio="15">15</button>
+          <button class="square" data-audio="16">16</button>
+        </div>
+      </div>
     </div>
-
-    <script>
-        function playAudio(clip) {
-            const audio = new Audio(`audio/${clip}.mp3`);
-            audio.play();
-        }
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

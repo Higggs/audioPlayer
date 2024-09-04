@@ -4,32 +4,36 @@
   border-radius: 20px;
   background: #dde1e7;
   box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
-  padding: 20px; /* Reduced padding for smaller screens */
+  padding: 20px;
   margin: 0 auto; /* Center the element */
+  display: flex; /* Ensure flexbox is used */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .input {
   display: flex;
   justify-content: space-between; /* Ensure no spacing between images */
-  margin-bottom: 20px; /* Added space below the input area */
+  margin-bottom: 20px;
+  width: 100%; /* Make sure input area uses full available width */
   height: auto;
   border-radius: 15px;
-  /* background-color: rgb(156, 156, 174); */
-  overflow:hidden; /* Ensures content doesn't overflow */
+  overflow: hidden;
 }
 
 .input img {
   height: 100px; /* Set the desired height */
   width: 100%; /* Allow the width to adjust automatically */
   object-fit: cover; /* Ensures images are fully displayed */
-  margin: 0; /* Remove any margin around images */
-  padding: 0; /* Remove any padding around images */
+  margin: 0;
+  padding: 0;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: column;
   gap: 10px; /* Added spacing between button rows */
+  width: 100%; /* Ensure full width usage */
 }
 
 .buttons {
@@ -47,20 +51,20 @@
   background: #dde1e7;
   box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
   color: rgb(137, 137, 137);
-  transition: transform 0.2s ease; /* Smooth transition for button press */
+  transition: transform 0.2s ease;
 }
 
 .buttons button:focus,
 .buttons button:active {
   background: #dde1e7;
   box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
-  transform: scale(0.95); /* Button presses inward */
+  transform: scale(0.95);
 }
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   #cal-body {
-    width: 50%; /* A smaller width for medium screens */
+    width: 80%; /* Use more of the screen width */
     padding: 20px;
   }
 
@@ -71,27 +75,24 @@
   }
 
   .buttons-container {
-        gap: 15px; /* Added spacing between button rows */
+    gap: 15px; /* Added spacing between button rows */
   }
-  
 }
 
 @media (max-width: 480px) {
   #cal-body {
-    width: 70%; /* Nearly full width for small screens */
-    padding: 15px; /* Reduced padding for small screens */
+    width: 100%; /* Use full screen width */
+    padding: 15px;
   }
 
   .input img {
-    height: 80px; /* Smaller height for very small screens */
+    height: 80px;
     margin-bottom: 10px;
   }
 
-
-
   .buttons button {
-    width: 50px; /* Full-width buttons on very small screens */
+    width: 50px;
     height: 50px;
-    font-size: 1rem; /* Smaller font size */
+    font-size: 1rem;
   }
 }

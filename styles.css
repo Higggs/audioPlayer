@@ -1,42 +1,97 @@
 #cal-body {
-  width: 400px;
+  width: 90%; /* Start with a larger percentage for better initial responsiveness */
+  max-width: 50rem; /* Sets a maximum width */
   border-radius: 20px;
   background: #dde1e7;
   box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
-  padding: 45px;
-  scale: 0.6;
-
- }
+  padding: 20px; /* Reduced padding for smaller screens */
+  margin: 0 auto; /* Center the element */
+}
 
 .input {
-  display: flex; /* Changed display to flex for horizontal layout */
-  margin: none;
-  height: 150px;
+  display: flex;
+  justify-content: space-between; /* Ensure no spacing between images */
+  margin-bottom: 20px; /* Added space below the input area */
+  height: auto;
   border-radius: 15px;
-  background-color: rgb(156, 156, 174);
+  /* background-color: rgb(156, 156, 174); */
+  overflow:hidden; /* Ensures content doesn't overflow */
 }
 
-
-
-.buttons button {
-  cursor: pointer;
-  height: 70px;
-  width: 70px;
-  border: 0;
-  font-size: 2rem;
-  border-radius: 50px;
-  background: #dde1e7;
-  box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
-  color: rgb(137, 137, 137);
+.input img {
+  height: 100px; /* Set the desired height */
+  width: 100%; /* Allow the width to adjust automatically */
+  object-fit: cover; /* Ensures images are fully displayed */
+  margin: 0; /* Remove any margin around images */
+  padding: 0; /* Remove any padding around images */
 }
 
-.buttons button:focus {
-  background: #dde1e7;
-  box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Added spacing between button rows */
 }
 
 .buttons {
-  padding-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.buttons button {
+  cursor: pointer;
+  height: 60px; /* Default height */
+  width: 60px;
+  border: 0;
+  font-size: 1.5rem; /* Default font size */
+  border-radius: 20px;
+  background: #dde1e7;
+  box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+  color: rgb(137, 137, 137);
+  transition: transform 0.2s ease; /* Smooth transition for button press */
+}
+
+.buttons button:focus,
+.buttons button:active {
+  background: #dde1e7;
+  box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+  transform: scale(0.95); /* Button presses inward */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  #cal-body {
+    width: 50%; /* A smaller width for medium screens */
+    padding: 20px;
+  }
+
+  .buttons button {
+    height: 50px;
+    width: 50px;
+    font-size: 1.2rem;
+  }
+
+  .buttons-container {
+        gap: 15px; /* Added spacing between button rows */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  #cal-body {
+    width: 70%; /* Nearly full width for small screens */
+    padding: 15px; /* Reduced padding for small screens */
+  }
+
+  .input img {
+    height: 80px; /* Smaller height for very small screens */
+    margin-bottom: 10px;
+  }
+
+
+
+  .buttons button {
+    width: 50px; /* Full-width buttons on very small screens */
+    height: 50px;
+    font-size: 1rem; /* Smaller font size */
+  }
 }

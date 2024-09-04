@@ -1,39 +1,36 @@
-#cal-body {
+.cal-body {
   width: 90%; /* Start with a larger percentage for better initial responsiveness */
-  max-width: 50rem; /* Sets a maximum width */
+  max-width: 500px; /* Sets a maximum width */
   border-radius: 20px;
   background: #dde1e7;
-  box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
-  padding: 20px;
-  margin: 0 auto; /* Center the element */
-  display: flex; /* Ensure flexbox is used */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center content horizontally */
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+  padding: 20px; /* Reduced padding for smaller screens */
+  margin: auto; /* Center the element */
 }
 
 .input {
   display: flex;
   justify-content: space-between; /* Ensure no spacing between images */
-  margin-bottom: 20px;
-  width: 100%; /* Make sure input area uses full available width */
+  margin-bottom: 20px; /* Added space below the input area */
   height: auto;
   border-radius: 15px;
-  overflow: hidden;
+  /* background-color: rgb(156, 156, 174); */
+  overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 .input img {
   height: 100px; /* Set the desired height */
   width: 100%; /* Allow the width to adjust automatically */
   object-fit: cover; /* Ensures images are fully displayed */
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Remove any margin around images */
+  padding: 0; /* Remove any padding around images */
 }
 
 .buttons-container {
   display: flex;
   flex-direction: column;
   gap: 10px; /* Added spacing between button rows */
-  width: 100%; /* Ensure full width usage */
 }
 
 .buttons {
@@ -49,22 +46,24 @@
   font-size: 1.5rem; /* Default font size */
   border-radius: 20px;
   background: #dde1e7;
-  box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
   color: rgb(137, 137, 137);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* Smooth transition for button press */
 }
 
 .buttons button:focus,
 .buttons button:active {
   background: #dde1e7;
-  box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
-  transform: scale(0.95);
+  box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+  transform: scale(0.95); /* Button presses inward */
 }
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
-  #cal-body {
-    width: 80%; /* Use more of the screen width */
+  .cal-body {
+    width: 50%; /* A smaller width for medium screens */
     padding: 20px;
   }
 
@@ -80,19 +79,19 @@
 }
 
 @media (max-width: 480px) {
-  #cal-body {
-    width: 100%; /* Use full screen width */
-    padding: 15px;
+  .cal-body {
+    width: 70%; /* Nearly full width for small screens */
+    padding: 15px; /* Reduced padding for small screens */
   }
 
   .input img {
-    height: 80px;
+    height: 80px; /* Smaller height for very small screens */
     margin-bottom: 10px;
   }
 
   .buttons button {
-    width: 50px;
+    width: 50px; /* Full-width buttons on very small screens */
     height: 50px;
-    font-size: 1rem;
+    font-size: 1rem; /* Smaller font size */
   }
 }
